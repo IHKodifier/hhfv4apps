@@ -24,7 +24,8 @@ class _AppMessageState extends State<AppMessage> {
                         color: Colors.white,
                         
                         child: Icon(
-                        FontAwesomeIcons.headset,
+                        // FontAwesomeIcons.headset,
+                        Icons.headset,
                        
                         size: 45.0,
                         // color: Colors.black,
