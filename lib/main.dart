@@ -12,11 +12,15 @@ ThemeData buildThemeData() {
   final baseTheme = ThemeData(fontFamily: 'Montserrat');
 
   return baseTheme.copyWith(
+  
+// set colors
       primaryColor: hhfPrimaryColor,
       primaryColorDark: hhfPrimaryDark,
       primaryColorLight: hhfPrimaryLight,
       scaffoldBackgroundColor: hhfScaffoldBackgroundLight,
       cardColor: hhfCardBackgroundLight,
+      //set swatch
+      
       textTheme: baseTheme.textTheme.copyWith(
         title: baseTheme.textTheme.title
             .copyWith(fontSize: 24.0, fontWeight: FontWeight.bold),
