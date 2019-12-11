@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage>
           title: CustomAppBar(),
           pinned: true,
           floating: true,
-          expandedHeight: 350.0,
+          expandedHeight: 320.0,
           flexibleSpace: MyFlexibleAppBar(),
         ),
         myList(),

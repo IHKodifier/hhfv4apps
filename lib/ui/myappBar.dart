@@ -3,86 +3,46 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String title;
-  final double barHeight =66.0;
+  final double barHeight = 66.0;
   CustomAppBar({this.title});
-
+//TODO: do thids please
+//FIXME: hgjhgjghhgjhg
   @override
   Widget build(BuildContext context) {
-
-return Container(
+    return Container(
+      color: Colors.green,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
-          Container(child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Icon(
-              FontAwesomeIcons.bars, color: Colors.white,),
-          ),),
-
-          Container(child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'My Digital Currency',
-              style: TextStyle(
-                color: Colors.white,
-                  fontFamily: 'Poppins',
-                  fontSize: 20.0
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: IconButton(
+                icon: Icon(FontAwesomeIcons.bars, color: Colors.white),
+                onPressed: () {},
               ),
             ),
-
-          ),),
-
-          Container(child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Icon(
-              FontAwesomeIcons.userCircle, color: Colors.white,),
-          ),),
-
-        ],
-      ),
-    );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            title: Text('title goes here'),
-            pinned: true,
-            expandedHeight: 210,
-            flexibleSpace: Container(
-              color: Colors.blue,
+          ),
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                'Health Financer',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: IconButton(
+                icon: Icon(FontAwesomeIcons.search, color: Colors.white),
+                onPressed: () {},
+              ),
             ),
           ),
         ],

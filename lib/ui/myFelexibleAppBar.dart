@@ -6,32 +6,25 @@ class MyFlexibleAppBar extends StatefulWidget {
 }
 
 class _MyFlexibleAppBarState extends State<MyFlexibleAppBar> {
-  final double appBarHeight= 66.0;
+  final double appBarHeight = 66.0;
 
   // const MyFlexiableAppBar();
 
   @override
   Widget build(BuildContext context) {
-    final double statusBarHeight= MediaQuery.of(context).padding.top;
-    
+    final double statusBarHeight = MediaQuery.of(context).padding.top;
+if (i) {
+  
+}
     return SafeArea(
-          child: Container(
-        padding: EdgeInsets.only(top: statusBarHeight),
-        height: statusBarHeight+appBarHeight+10.0,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text('Financing quota available',style: Theme.of(context).textTheme.subtitle, ),
-              Text('PKR 98,000 ',style: Theme.of(context).textTheme.title,)
-            ],
+      child: Container(
+        // height: statusBarHeight + appBarHeight,
+        color:Colors.purple, 
+    ),);
+  
 
-          ),
-        ),
-        
-      ),
-    );
+
+
+
   }
 }
