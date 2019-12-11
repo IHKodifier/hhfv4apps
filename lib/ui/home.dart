@@ -43,12 +43,12 @@ class _HomePageState extends State<HomePage>
   }
 
   Widget _buildBottomNavBar() {
-    //todo
-    // do rolebased initializations here
+    //TODO: do rolebased initializations here
+    
 
     return BottomNavigationBar(
-      // find tabs authorized to this user's roles
-      // and switch selection to generate a list of BottomNabigationBarItems
+      //TODO: find tabs authorized to this user's roles
+      // TODO:and switch selection to generate a list of BottomNabigationBarItems
 
       selectedItemColor: Theme.of(context).primaryColor,
       unselectedItemColor: Theme.of(context).accentColor,

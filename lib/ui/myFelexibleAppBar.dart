@@ -8,14 +8,14 @@ class MyFlexibleAppBar extends StatefulWidget {
 class _MyFlexibleAppBarState extends State<MyFlexibleAppBar> {
   final double appBarHeight = 66.0;
 
-  // const MyFlexiableAppBar();
+
 
   @override
   Widget build(BuildContext context) {
     final double statusBarHeight = MediaQuery.of(context).padding.top;
-if (i) {
+
   
-}
+
     return SafeArea(
       child: Container(
         // height: statusBarHeight + appBarHeight,
