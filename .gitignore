@@ -76,3 +76,4 @@
 # IHK ADDED
 *.lock
 *.vscode/
+*.local.properties
