@@ -13,18 +13,22 @@ class _MyFlexibleAppBarState extends State<MyFlexibleAppBar> {
   @override
   Widget build(BuildContext context) {
     final double statusBarHeight = MediaQuery.of(context).padding.top;
-if (i) {
-  
-}
     return SafeArea(
       child: Container(
         // height: statusBarHeight + appBarHeight,
-        color:Colors.purple, 
-    ),);
-  
-
-
-
-
+        color: Colors.red.shade900,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Container(
+              
+              color: Colors.black,
+              width:MediaQuery.of(context).size.width/10.0* 4.5 ,
+              child: DashBoard(),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
