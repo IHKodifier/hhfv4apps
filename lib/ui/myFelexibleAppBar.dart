@@ -22,7 +22,7 @@ class _MyFlexibleAppBarState extends State<MyFlexibleAppBar> {
           children: <Widget>[
             Container(
               
-              color: Colors.black,
+              color: Colors.transparent,
               width:MediaQuery.of(context).size.width/10.0* 4.5 ,
               child: DashBoard(),
             )

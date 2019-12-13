@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green,
+      // color: Colors.green,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.end,
@@ -30,7 +30,7 @@ class CustomAppBar extends StatelessWidget {
               child: Text(
                 'Health Financer',
                 style: TextStyle(
-                    color: Colors.white,
+                    // color: Colors.white,
                     fontSize: 22.0,
                     fontWeight: FontWeight.bold),
               ),
