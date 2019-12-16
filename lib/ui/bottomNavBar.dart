@@ -10,10 +10,20 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   @override
    Widget build(BuildContext context) {
+    return BottomAppBar(
+      elevation: 5.0,
+      color: Colors.purple,
+      shape: const CircularNotchedRectangle(),
+      notchMargin: 4.0,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      child: _buildBottomNavigationBar(),
+    ); 
+    
+   }
 
-     
-    //TODO:  ROLEBASED  initializations here
-
+   Widget _buildBottomNavigationBar(){
+     //TODO:  ROLEBASED  initializations here and 
+    //  return appropriate buttons in Bottom Navigation Bar
     return BottomNavigationBar(
       // backgroundColor: Colors.pink,
       fixedColor: Theme.of(context).primaryColor,
@@ -63,3 +73,4 @@ class _BottomNavBarState extends State<BottomNavBar> {
     );
   }
 }
+
