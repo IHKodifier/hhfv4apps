@@ -1,11 +1,11 @@
 import 'package:health_financer/packageLib.dart';
 
-class CaseLog extends StatefulWidget {
+class UserHome extends StatefulWidget {
   @override
-  _CaseLogState createState() => _CaseLogState();
+  _UserHomeState createState() => _UserHomeState();
 }
 
-class _CaseLogState extends State<CaseLog> {
+class _UserHomeState extends State<UserHome> {
 //   List<HfCase> _cases;
 //   FirestoreService fireServ = new FirestoreService();
 //   StreamSubscription<QuerySnapshot> _caseStream;

@@ -21,15 +21,14 @@ export 'package:health_financer/colors.dart';
 export 'package:health_financer/ui/about.dart';
 export 'package:health_financer/ui/caseLog.dart';
 export 'package:health_financer/ui/caseTile.dart';
-export 'package:health_financer/ui/home.dart';
-export 'package:health_financer/ui/horizontal_list_View.dart';
-export 'package:health_financer/ui/login.dart';
+// export 'package:health_financer/ui/home.dart';
+// export 'package:health_financer/ui/horizontal_list_View.dart';
+export 'package:health_financer/ui/loginPage.dart';
 export 'package:health_financer/ui/messages.dart';
 export 'package:health_financer/ui/myappBar.dart';
-export 'package:health_financer/ui/myFelexibleAppBar.dart';
 export 'package:health_financer/ui/notifications.dart';
-export 'package:health_financer/ui/home.dart';
-export 'package:health_financer/ui/bottomNavBar.dart';
+// export 'package:health_financer/ui/home.dart';
+// export 'package:health_financer/ui/bottomNavBar.dart';
 
 
 

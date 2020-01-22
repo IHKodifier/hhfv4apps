@@ -1,0 +1,63 @@
+import 'package:health_financer/packageLib.dart';
+// import 'package:health_financer/ui/bottomNavBar.dart';
+// import 'package:health_financer/ui/caseTile.dart';
+// import 'package:health_financer/ui/myFelexibleAppBar.dart';
+// import 'package:health_financer/ui/newcase.dart'
+
+class AppHomePage extends StatefulWidget {
+  @override
+  _AppHomePageState createState() => _AppHomePageState();
+}
+
+class _AppHomePageState extends State<AppHomePage>
+    with SingleTickerProviderStateMixin {
+  TabController _tabcontroller;
+  List<Tab> _tabs = <Tab>[];
+  List<Widget> _tabViews = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _tabcontroller = TabController(length: 3, vsync: this);
+    _tabs = [
+      Tab(icon: Icon(Icons.home,),
+      text: 'Home',),
+      Tab(icon: Icon(Icons.pie_chart),
+      text: 'Dashboard',),
+      Tab(icon: Icon(Icons.chat),
+      text: 'Chat',)
+    ];
+    _tabViews=[ DashBoard(),
+    UserHome(),
+    AppMessage(),
+    ];
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _tabcontroller.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:AppBar(title: Text('Health Financer'),centerTitle: true,),
+      
+      body: TabBarView(children: _tabViews, controller: _tabcontroller),
+      bottomNavigationBar: Material(
+          color: Theme.of(context).primaryColor,
+          elevation: 10.0,
+          child: Container(
+            height: 70.0,
+            child: TabBar(
+              tabs: _tabs,
+              controller: _tabcontroller,
+              // isScrollable: true,
+            ),
+          )),
+    drawer: Drawer(),      
+    );
+  }
+}

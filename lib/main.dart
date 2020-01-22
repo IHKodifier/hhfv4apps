@@ -1,15 +1,18 @@
 import 'package:health_financer/packageLib.dart';
+import 'package:health_financer/ui/apphomePage.dart';
 
 void main() {
   runApp(MaterialApp(
       title: 'Health Financer',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: AppHomePage(),
       theme: buildThemeData()));
 }
 
 ThemeData buildThemeData() {
-  final baseTheme = ThemeData(fontFamily: 'Montserrat');
+  final baseTheme = ThemeData(
+    // primarySwatch: hhfPrimaryLight,
+    fontFamily: 'Montserrat');
 
   return baseTheme.copyWith(
   
