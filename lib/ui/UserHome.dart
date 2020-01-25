@@ -28,7 +28,11 @@ class _UserHomeState extends State<UserHome> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.blue[100],);
+    return Container(color: Theme.of(context).scaffoldBackgroundColor,
+    child:Center(
+     child:  Text('User Home',
+    style: Theme.of(context).textTheme.display1),
+    ));
 //     return StreamBuilder(
 //         stream: Firestore.instance.collection('Cases').snapshots(),
         

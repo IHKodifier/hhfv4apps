@@ -14,19 +14,7 @@ class HorizontalListView extends StatefulWidget {
 class _HorizontalListViewState extends State<HorizontalListView> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Color(0xffeeeeee),
-            blurRadius: 3.0,
-          ),
-        ],
-      ),
-      child: Card(
-        child: Text('hello'),
-      ),
-    );
+    return ListView.builder(itemBuilder: null);
+    
   }
 }

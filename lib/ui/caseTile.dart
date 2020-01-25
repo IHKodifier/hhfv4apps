@@ -9,12 +9,18 @@ class CaseTile extends StatefulWidget {
 class _CaseTileState extends State<CaseTile> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(4.0),
-      elevation: 4.0,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text('Hello!'),
+    return Container(
+      height: 200,
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xffeeeeee),
+            blurRadius: 3.0,
+          ),
+        ],
+      ),
+      child: Card(
+        child: Text('hello'),
       ),
     );
   }

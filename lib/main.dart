@@ -11,11 +11,11 @@ void main() {
 
 ThemeData buildThemeData() {
   final baseTheme = ThemeData(
-    // primarySwatch: hhfPrimaryLight,
-    fontFamily: 'Montserrat');
+      // primarySwatch: hhfPrimaryLight,
+      fontFamily: 'Montserrat');
 
   return baseTheme.copyWith(
-  
+
 // set colors
       primaryColor: hhfPrimaryColor,
       primaryColorDark: hhfPrimaryDark,
@@ -23,7 +23,12 @@ ThemeData buildThemeData() {
       scaffoldBackgroundColor: hhfScaffoldBackgroundLight,
       cardColor: hhfCardBackgroundLight,
       //set swatch
-      
+      //set Widget Themes
+      appBarTheme: AppBarTheme(
+        color: hhfScaffoldBackgroundLight,
+        iconTheme: baseTheme.iconTheme.copyWith(color: hhfPrimaryColor),
+      ),
+     bottomAppBarTheme: baseTheme.bottomAppBarTheme.copyWith(color:hhfPrimaryColor ),
       textTheme: baseTheme.textTheme.copyWith(
         title: baseTheme.textTheme.title
             .copyWith(fontSize: 24.0, fontWeight: FontWeight.bold),
@@ -39,7 +44,6 @@ ThemeData buildThemeData() {
             fontWeight: FontWeight.w700,
             fontFamily: 'Montserrat',
             letterSpacing: 2.8,
-            
             color: Colors.white),
         display1: baseTheme.textTheme.display1.copyWith(),
         display2: baseTheme.textTheme.display2.copyWith(),

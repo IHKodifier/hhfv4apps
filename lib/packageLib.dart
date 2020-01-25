@@ -19,7 +19,7 @@ export 'package:health_financer/modelsLib.dart';
 // UI screens and widgets
 export 'package:health_financer/colors.dart';
 export 'package:health_financer/ui/about.dart';
-export 'package:health_financer/ui/caseLog.dart';
+export 'package:health_financer/ui/UserHome.dart';
 export 'package:health_financer/ui/caseTile.dart';
 // export 'package:health_financer/ui/home.dart';
 // export 'package:health_financer/ui/horizontal_list_View.dart';
