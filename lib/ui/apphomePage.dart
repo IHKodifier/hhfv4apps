@@ -63,7 +63,7 @@ class _AppHomePageState extends State<AppHomePage>
     return Scaffold(
       appBar: AppBar(
         // actionsIconTheme: Theme.of(context).iconTheme.copyWith(color: Colors.black),
-        backgroundColor: hhfScaffoldBackgroundLight,
+        // backgroundColor: hhfScaffoldBackgroundLight,
         title: Text(
           'Health Financer',
           style: Theme.of(context)

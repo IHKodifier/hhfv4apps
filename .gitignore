@@ -77,3 +77,4 @@
 *.lock
 *.vscode/
 *.local.properties
+lib/packageLib.dart
