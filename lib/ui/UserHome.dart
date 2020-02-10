@@ -1,4 +1,7 @@
+import 'package:health_financer/main.dart';
 import 'package:health_financer/packageLib.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserHome extends StatefulWidget {
   @override
@@ -28,14 +31,30 @@ class _UserHomeState extends State<UserHome> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: Theme.of(context).scaffoldBackgroundColor,
-    child:Center(
-     child:  Text('User Home',
-    style: Theme.of(context).textTheme.display1),
-    ));
+    return Container(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('User Home', style: Theme.of(context).textTheme.display1),
+              RaisedButton(
+                color: Theme.of(context).primaryColor,
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                  Navigator.popAndPushNamed(context, '/login');
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text('Log out'),
+                ),
+              )
+            ],
+          ),
+        ));
 //     return StreamBuilder(
 //         stream: Firestore.instance.collection('Cases').snapshots(),
-        
+
 //         builder: (context, snapshot) {
 //           if (!snapshot.hasData) {
 //             return Center(
