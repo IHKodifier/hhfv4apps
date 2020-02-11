@@ -12,6 +12,8 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   String _email;
   String _password;
+  String _confirmPassword;
+  bool _passwordMatchError = false;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,6 @@ class _SignUpPageState extends State<SignUpPage> {
                   padding: const EdgeInsets.only(top: 30.0),
                   child: TahafuzLogo(),
                 ),
-
                 TextField(
                   decoration: InputDecoration(
                     hintText: 'Enter a valid email to set as username',
@@ -77,6 +78,40 @@ class _SignUpPageState extends State<SignUpPage> {
                     _password = value;
                   },
                 ),
+                TextField(
+                  decoration: InputDecoration(
+                    border: localTheme.inputDecorationTheme.border,
+                    hintText: 'Confirm password',
+                    hintStyle: localTheme.textTheme.subhead.copyWith(
+                      fontSize: 16.0,
+                      color: Colors.black54,
+                      fontStyle: FontStyle.italic,
+                    ),
+                    labelText: 'enter Password once again',
+                    labelStyle: localTheme.textTheme.title.copyWith(
+                      color: localTheme.primaryColor,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                  obscureText: true,
+                  onChanged: (value) {
+                    _confirmPassword = value;
+                  },
+                ),
+                (_passwordMatchError)
+                    ? _buildPasswordMatchError(context)
+                    : Text(''),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 28.0,
+                    top: 16.0,
+                    right: 16.0,
+                  ),
+                  child: Text(
+                    'By clicking the \"Sign Up\" button, you agree to the terms and Conditions set by the TAHAFUZ program',
+                    style: Theme.of(context).textTheme.subtitle,
+                  ),
+                ),
                 // ),
                 SizedBox(height: 30.0),
                 Container(
@@ -86,40 +121,53 @@ class _SignUpPageState extends State<SignUpPage> {
                     horizontal: 24.0,
                   ),
                   child: RaisedButton(
-                    color: Theme.of(context).primaryColor,
-                    child: Text(
-                      'Sign up ',
-                      style: localTheme.textTheme.button
-                          .copyWith(color: Colors.white, fontSize: 20.0),
-                    ),
-                    onPressed: () {
-                      FirebaseAuth.instance
-                          .createUserWithEmailAndPassword(
-                              email: _email, password: _password)
-                          .then((signedInUser) {
-                            UserManagement().createNewUser(signedInUser, context);
-                          })
-                          .catchError((e) {});
+                      color: Theme.of(context).primaryColor,
+                      child: Text(
+                        'Sign up ',
+                        style: localTheme.textTheme.button
+                            .copyWith(color: Colors.white, fontSize: 20.0),
+                      ),
+                      onPressed: () {
+                        if (_password == _confirmPassword) {
+                          FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: _email, password: _password)
+                              .then((signedInUser) {
+                            UserManagement()
+                                .createNewUser(signedInUser, context);
+                            Navigator.popAndPushNamed(
+                                context, '/newAccountSuccess');
+                          }).catchError((e) {});
 
-                      Navigator.of(context).pushNamed('/login');
-                    },
-                  ),
+                          Navigator.of(context).pushNamed('/newAccountSuccess');
+                        } else {
+                          setState(() {
+                            _passwordMatchError = true;
+                          });
+                        }
+                      }),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 28.0,
-                    top: 16.0,
-                    right: 16.0,
-                  ),
-                  child: Text(
-                    'By clicking Sign up button, you agree to the terms and Conditions set by TAHAFUZ program',
-                    style: Theme.of(context).textTheme.subtitle,
-                  ),
-                )
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Padding _buildPasswordMatchError(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 28.0,
+        top: 16.0,
+        right: 16.0,
+      ),
+      child: Text(
+        'The psswords entered do not match. \n Please try again',
+        style: Theme.of(context)
+            .textTheme
+            .title
+            .copyWith(color: Colors.red.shade800, fontSize: 14.0),
       ),
     );
   }
