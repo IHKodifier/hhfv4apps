@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                 TextField(
                   decoration: InputDecoration(
                     border: localTheme.inputDecorationTheme.border,
-                    hintText: 'Passwords are always CASE sENsItivE....Right...)',
+                    hintText: ' aLWayS CASE sENsItivE!!',
                     hintStyle: localTheme.textTheme.subhead.copyWith(
                       fontSize: 16.0,
                       color: Colors.black54,
