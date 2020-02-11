@@ -9,8 +9,6 @@ class AppMessage extends StatefulWidget {
 class _AppMessageState extends State<AppMessage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Chat History',
-    style: Theme.of(context).textTheme.display1,
-    ));
+    return Center(child: Text('Messages'));
   }
 }

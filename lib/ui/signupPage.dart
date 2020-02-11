@@ -112,6 +112,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: Theme.of(context).textTheme.subtitle,
                   ),
                 ),
+                // ),
+                SizedBox(height: 30.0),
                 Container(
                   width: double.infinity,
                   height: 45.0,

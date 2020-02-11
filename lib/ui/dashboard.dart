@@ -11,7 +11,7 @@ class _DashBoardState extends State<DashBoard> {
     return Container(
       // color: Colors.teal[400],
       child: Center(
-        child: Text('Dashboard Page ',style: Theme.of(context).textTheme.display1,)
+        child: Text('Dashboard',style: Theme.of(context).textTheme.display1,)
         // Column(
         //   children: <Widget>[
         //     // Image.asset('/assets/images/dashboard.png'),

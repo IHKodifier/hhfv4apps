@@ -1,5 +1,4 @@
 import 'package:health_financer/packageLib.dart';
-import 'package:health_financer/ui/appDrawer.dart';
 // import 'package:health_financer/ui/bottomNavBar.dart';
 // import 'package:health_financer/ui/caseTile.dart';
 // import 'package:health_financer/ui/myFelexibleAppBar.dart';
@@ -21,33 +20,16 @@ class _AppHomePageState extends State<AppHomePage>
     super.initState();
     _tabcontroller = TabController(length: 3, vsync: this);
     _tabs = [
-      Tab(
-        icon: Icon(
-          Icons.home,
-          // color: Colors.black,
-        ),
-        // text: 'Home',
-        child: Text(
-          'Home',
-          // style: Theme.of(context)
-          // .textTheme
-          // .subhead
-          // .copyWith(color: Colors.black),
-        ),
-      ),
-      Tab(
-        icon: Icon(Icons.pie_chart),
-        text: 'Dashboard',
-      ),
-      Tab(
-        icon: Icon(Icons.chat),
-        text: 'Chat',
-      )
+      Tab(icon: Icon(Icons.home,),
+      text: 'Home',),
+      Tab(icon: Icon(Icons.pie_chart),
+      text: 'Dashboard',),
+      Tab(icon: Icon(Icons.chat),
+      text: 'Chat',)
     ];
-    _tabViews = [
-      UserHome(),
-      DashBoard(),
-      AppMessage(),
+    _tabViews=[ DashBoard(),
+    UserHome(),
+    AppMessage(),
     ];
   }
 
@@ -61,39 +43,21 @@ class _AppHomePageState extends State<AppHomePage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // actionsIconTheme: Theme.of(context).iconTheme.copyWith(color: Colors.black),
-        // backgroundColor: hhfScaffoldBackgroundLight,
-        title: Text(
-          'Health Financer',
-          style: Theme.of(context)
-              .textTheme
-              .title
-              .copyWith(color: Theme.of(context).primaryColor),
-        ),
-        centerTitle: true,
-      ),
-      body: TabBarView(
-        children: _tabViews,
-        controller: _tabcontroller,
-      ),
+      appBar:AppBar(title: Text('Health Financer'),centerTitle: true,),
+      
+      body: TabBarView(children: _tabViews, controller: _tabcontroller),
       bottomNavigationBar: Material(
           color: Theme.of(context).primaryColor,
-          // color: Colors.blueGrey.shade200,
-          // color: Colors.blueGrey.shade50,
           elevation: 10.0,
           child: Container(
             height: 70.0,
             child: TabBar(
               tabs: _tabs,
               controller: _tabcontroller,
-              indicatorSize: TabBarIndicatorSize.tab,
-              indicatorWeight: 3.0,
-              indicatorColor: Colors.white,
               // isScrollable: true,
             ),
           )),
-      drawer: AppDrawer(),
+    drawer: Drawer(),      
     );
   }
 }

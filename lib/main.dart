@@ -1,50 +1,29 @@
 import 'package:health_financer/packageLib.dart';
 import 'package:health_financer/ui/apphomePage.dart';
-import 'package:health_financer/ui/newAccountSuccess.dart';
 
-import 'package:health_financer/ui/signupPage.dart';
+void main() {
+  runApp(MaterialApp(
+      title: 'Health Financer',
+      debugShowCheckedModeBanner: false,
+      home: AppHomePage(),
+      theme: buildThemeData()));
+}
 
-void main() => runApp(MyApp());
+ThemeData buildThemeData() {
+  final baseTheme = ThemeData(
+    // primarySwatch: hhfPrimaryLight,
+    fontFamily: 'Montserrat');
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Health Financer',
-        debugShowCheckedModeBanner: false,
-        home: LoginPage(
-          retryLogin: false,
-        ),
-        routes: <String, WidgetBuilder>{
-          '/login': (BuildContext context) => LoginPage(retryLogin: false),
-          '/retryLogin': (BuildContext context) => LoginPage(
-                retryLogin: true,
-              ),
-          '/appHome': (BuildContext context) => AppHomePage(),
-          '/signup': (BuildContext context) => SignUpPage(),
-          '/userHome': (BuildContext context) => UserHome(),
-          '/newAccountSuccess': (BuildContext context)=>NewAccountSuccess(),
-        },
-        theme: _buildThemeData());
-  }
-
-  ThemeData _buildThemeData() {
-    final baseTheme = ThemeData();
-
-    return baseTheme.copyWith(
+  return baseTheme.copyWith(
+  
 // set colors
-
-      primaryColor: Colors.green.shade900,
-      scaffoldBackgroundColor: Colors.white,
-
-      buttonTheme: const ButtonThemeData().copyWith(
-        textTheme: ButtonTextTheme.primary,
-      ),
-      appBarTheme: AppBarTheme(
-        color: baseTheme.scaffoldBackgroundColor,
-        iconTheme: baseTheme.iconTheme.copyWith(color: Colors.green[900]),
-      ),
-
+      primaryColor: hhfPrimaryColor,
+      primaryColorDark: hhfPrimaryDark,
+      primaryColorLight: hhfPrimaryLight,
+      scaffoldBackgroundColor: hhfScaffoldBackgroundLight,
+      cardColor: hhfCardBackgroundLight,
+      //set swatch
+      
       textTheme: baseTheme.textTheme.copyWith(
         title: baseTheme.textTheme.title
             .copyWith(fontSize: 24.0, fontWeight: FontWeight.bold),
@@ -56,15 +35,18 @@ class MyApp extends StatelessWidget {
         body2: baseTheme.textTheme.body2.copyWith(),
         caption: baseTheme.textTheme.caption.copyWith(),
         button: baseTheme.textTheme.button.copyWith(
-            fontSize: 18.0,
+            fontSize: 16.0,
             fontWeight: FontWeight.w700,
-            letterSpacing: 2.0,
+            fontFamily: 'Montserrat',
+            letterSpacing: 2.8,
+            
             color: Colors.white),
         display1: baseTheme.textTheme.display1.copyWith(),
         display2: baseTheme.textTheme.display2.copyWith(),
         display3: baseTheme.textTheme.display3.copyWith(),
         display4: baseTheme.textTheme.display4.copyWith(),
       ),
-    );
-  }
+      textSelectionColor: baseTheme.primaryColor,
+      textSelectionHandleColor: baseTheme.primaryColor,
+      focusColor: baseTheme.primaryColor);
 }
