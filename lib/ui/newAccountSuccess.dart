@@ -17,17 +17,18 @@ class NewAccountSuccess extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          width: 200.0,
+          width: 300.0,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text('You have succesfully created an account for yourself'),
+              Text('You have succesfully created an account for yourself',style: Theme.of(context).textTheme.display1.copyWith(fontSize:22.0 ),),
+              SizedBox(height: 8.0,),
               RaisedButton(
-                  child: Text('Continue'),
+                  child: Text('Login & Continue '),
                   color: Theme.of(context).primaryColor,
                   onPressed: () {
-                    Navigator.popAndPushNamed(context, '/appHome');
+                    Navigator.popAndPushNamed(context, '/login');
                   })
             ],
           ),
